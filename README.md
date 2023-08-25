@@ -13,56 +13,29 @@ Database          | MySQL
 Persistence       | JDBC template
 Server Build Tools| Maven(Java)
 
-## Folder Structure
-```bash
-PROJECT_FOLDER
-│  README.md
-│  pom.xml           
-│  build.gradle
-└──[src]      
-│  └──[main]      
-│     └──[java]      
-│     └──[resources]
-│        │  application.properties #contains springboot cofigurations
-│        │  schema.sql  # Contains DB Script to create tables that executes during the App Startup          
-│        │  data.sql    # Contains DB Script to Insert data that executes during the App Startup (after schema.sql)
-│        └──[public]    # keep all html,css etc, resources that needs to be exposed to user without security
-│
-└──[target]              #Java build files, auto-created after running java build: mvn install
-│  └──[classes]
-│     └──[public]
-│     └──[webui]         #webui folder is created by (maven/gradle) which copies webui/dist folder 
-│                        #the application.properties file list webui as a resource folder that means files can be accesses http://localhost/<files_inside_webui> 
-│
-└──[webui]
-   │  package.json     
-   │  angular-cli.json   #ng build configurations)
-   └──[node_modules]
-   └──[src]              #frontend source files
-   └──[dist]             #frontend build files, auto-created after running angular build: ng -build
-```
-
 ## Prerequisites
+
 Ensure you have this installed before proceeding further
 - Java 17
 
 ## About
 
-This is a RESTful implementation of Users and Posts APIs which include Spring Security, Junit Testing, and Swagger.
+This is a RESTful implementation of Users and Posts APIs, including Spring Security, Junit Testing, and Swagger.
 
 ### Features of the Project
+
 * Users APIs:
-  * Register User API
-  * Login API
-  * Get Users API [Optional paging,Optional sorting,Data hiding based on user role]
-  * Get Users by Ids API
+  * Register User API (/api/auth/register)
+  * Login API (/api/auth/login)
+  * Get Users API (/api/allUsers) [Optional paging,Optional sorting,Data hiding based on user role]
+  * Get Users by Ids API (/api/allUsersById)
 
 * Posts APIs:
-  * Create/Update Post API [Includes file upload]
-  * Get Posts by User API  [Optional filter for likes, dislikes, title, content, created_at, updated_at,Optional paging and sorting]
-  * Like a post API
-  * Dislike a post API
-  * Get top 10/50 liked/disliked posts API [Optional filter of user id]
+  * Create/Update Post API (/api/addPost) [Includes file upload]
+  * Get Posts by User API  (/api/getPostsByUsers) [Optional filter for likes, dislikes, title, content, created_at, updated_at,Optional paging and sorting]
+  * Like a post API (/api/like)
+  * Dislike a post API (/api/dislike)
+  * Get top 10/50 liked/disliked posts API (/api/getTopPosts) [Optional filter of user id]
 
 * Backend
   * Token Based Security (using Spring security)
