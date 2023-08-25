@@ -85,7 +85,7 @@ Swagger Spec      |  http://localhost:8095/v3/api-docs          |
 ### Screenshots
 
 #### Swagger UI APIs
-(/screenshots/swagger_ui_api.png?raw=true)
+![Dashboard](/screenshots/swagger_ui_api.png?raw=true)
 ---
 #### Swagger UI Schemas
 ![Dashboard](/screenshots/swagger_ui_schema.png?raw=true)
