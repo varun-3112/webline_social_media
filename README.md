@@ -48,48 +48,48 @@ Ensure you have this installed before proceeding further
 
 ## About
 
-This is an RESTfull implementation of an order processing app based on Northwind database schema from Microsoft.
-The goal of the project is to 
-- Highlight techniques of making and securing a REST full app using [SpringBoot](https://projects.spring.io/spring-boot)
-- How to consume an RESTfull service and make an HTML5 based Single Page App using [Angular 4+](https://github.com/angular/angular)
+This is an RESTfull implementation of Users and Posts APIs which include Spring Security, Junit Testing, and Swagger.
 
 ### Features of the Project
+* Users APIs:
+  * Register User API
+  * Login API
+  * Get Users API [Optional paging,Optional sorting,Data hiding based on user role]
+  * Get Users by Ids API
+
+* Posts APIs:
+  * Create/Update Post API [Includes file upload]
+  * Get Posts by User API  [Optional filter for likes, dislikes, title, content, created_at, updated_at,Optional paging and sorting]
+  * Like a post API
+  * Dislike a post API
+  * Get top 10/50 liked/disliked posts API [Optional filter of user id]
+
 * Backend
   * Token Based Security (using Spring security)
   * API documentation and Live Try-out links with Swagger 
-  * In Memory DB with H2 
-  * Using JPA and JDBC template to talk to relational database
-  * How to request and respond for paginated data 
+  * MySQL Database
+  * Using JDBC template to talk to relational database
+    
+## MySQL Database
+* Database - social_media
+* Tables
+  * User
+  * Post
+  * Post_like_dislike_map
 
-* Frontend
-  * Organizing Components, Services, Directives, Pages etc in an Angular App
-  * How to chain RxJS Observables (by making sequntial AJAX request- its different that how you do with promises)
-  * Techniques to Lazy load Data (Infinite Scroll)
-  * Techniques to load large data set in a data-table but still keeping DOM footprint less
-  * Routing and guarding pages that needs authentication
-  * Basic visulaization
-
-* Build
-  * How to build all in one app that includes (database, sample data, RESTfull API, Auto generated API Docs, frontend and security)
-  * Portable app, Ideal for dockers, cloud hosting.
-
-## In Memory DB (H2)
-I have included an in-memory database for the application. Database schema and sample data for the app is created everytime the app starts, and gets destroyed after the app stops, so the changes made to to the database are persistent only as long as the app is running
-<br/>
-Creation of database schema and data are done using sql scripts that Springs runs automatically. 
-To modify the database schema or the data you can modify [schema.sql](./src/main/resources/schema.sql) and [data.sql](./src/main/resources/data.sql) which can be found at `/src/main/resources`
 
 ## Spring security
-Security is **enabled** by default, to disable, you must comment [this line](./src/main/java/com/app/config/SecurityConfig.java#L15) in `src/main/java/com/config/SecurityConfig.java`<br/>
-When security is enabled, none of the REST API will be accessesble directly.
+* JWT authentication is provided for all the APIs apart from following two.
+  * Register User API
+  * Login API
 
-To test security access `http://localhost:9119/version` API and you should get a forbidden/Access denied error. 
-
+* Above two APIs will return JWT in response, which can be used in Bearer Authorization to access other APIs. Default validity is 5 minutes, which can be changed in application.properties.
 
 ### Build Backend (SpringBoot Java)
 ```bash
 # Maven Build : Navigate to the root folder where pom.xml is present 
 mvn clean install
+```
 
 ### Start the API and WebUI server
 ```bash
@@ -106,10 +106,6 @@ Cpmponent         | URL                                      | Credentials
 MySQL Database       |  jdbc:mysql://localhost:3306/social_media        |  User Name:`root`,password:`root`   
 Swagger (API Ref) |  http://localhost:9119/swagger-ui/index.html   | 
 Swagger Spec      |  http://localhost:8095/v3/api-docs          |
-
-
-
-**To get an authentication token** 
 
 
 
@@ -140,15 +136,3 @@ Swagger Spec      |  http://localhost:8095/v3/api-docs          |
 ---
 #### Database Schema
 ![ER Diagram](/screenshots/db_schema.png?raw=true)
-
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/angular-springboot-rest-jwt#backer)]
-
-<a href="https://opencollective.com/angular-springboot-rest-jwt#backers" target="_blank"><img src="https://opencollective.com/angular-springboot-rest-jwt/backers.svg?width=890"></a>
-
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/angular-springboot-rest-jwt#sponsor)]
