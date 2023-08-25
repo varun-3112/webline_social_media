@@ -10,7 +10,7 @@ Security          | Token Based (Spring Security and [JWT](https://github.com/au
 REST Documentation| [Swagger UI / Springfox](https://github.com/springfox/springfox)
 REST Spec         | [Open API Standard](https://www.openapis.org/) 
 Database          | MySQL
-Persistence       | JDBC template
+Persistence       | JDBC driver
 Server Build Tools| Maven(Java)
 
 ## Prerequisites
@@ -64,7 +64,7 @@ This is a RESTful implementation of Users and Posts APIs, including Spring Secur
 mvn clean install
 ```
 
-### Start the API and WebUI server
+### Start the API server
 ```bash
 # Start the server (8095)
 # port and other configurations for API servere is in [./src/main/resources/application.properties](/src/main/resources/application.properties) file
