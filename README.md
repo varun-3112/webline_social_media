@@ -25,17 +25,17 @@ This is a RESTful implementation of Users and Posts APIs, including Spring Secur
 ### Features of the Project
 
 * Users APIs:
-  * Register User API (/api/auth/register)
-  * Login API (/api/auth/login)
-  * Get Users API (/api/allUsers) [Optional paging,Optional sorting,Data hiding based on user role]
-  * Get Users by Ids API (/api/allUsersById)
+  * [POST] Register User API (/api/auth/register)
+  * [POST] Login API (/api/auth/login)
+  * [GET] Get Users API (/api/allUsers) [Optional paging,Optional sorting,Data hiding based on user role]
+  * [GET] Get Users by Ids API (/api/allUsersById)
 
 * Posts APIs:
-  * Create/Update Post API (/api/addPost) [Includes file upload]
-  * Get Posts by User API  (/api/getPostsByUsers) [Optional filter for likes, dislikes, title, content, created_at, updated_at,Optional paging and sorting]
-  * Like a post API (/api/like)
-  * Dislike a post API (/api/dislike)
-  * Get top 10/50 liked/disliked posts API (/api/getTopPosts) [Optional filter of user id]
+  * [POST] Create/Update Post API (/api/addPost) [Includes file upload]
+  * [GET] Get Posts by User API  (/api/getPostsByUsers) [Optional filter for likes, dislikes, title, content, created_at, updated_at,Optional paging and sorting]
+  * [POST] Like a post API (/api/like)
+  * [POST] Dislike a post API (/api/dislike)
+  * [GET] Get top 10/50 liked/disliked posts API (/api/getTopPosts) [Optional filter of user id]
 
 * Backend
   * Token Based Security (using Spring security)
@@ -50,6 +50,7 @@ This is a RESTful implementation of Users and Posts APIs, including Spring Secur
   * Post
   * Post_like_dislike_map
 
+* Kindly refer file DataBase_Script_Information.docx which contain table creation query and images.
 
 ## Spring security
 * JWT authentication is provided for all the APIs apart from following two.
