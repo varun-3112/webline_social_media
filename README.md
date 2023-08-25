@@ -98,7 +98,7 @@ mvn clean install
 
 # If you build with maven jar location will be 
 java -jar ./target/app-1.0.0.jar
-
+```
 
 ### Accessing Application
 Cpmponent         | URL                                      | Credentials
