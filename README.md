@@ -48,7 +48,7 @@ Ensure you have this installed before proceeding further
 
 ## About
 
-This is an RESTfull implementation of Users and Posts APIs which include Spring Security, Junit Testing, and Swagger.
+This is a RESTful implementation of Users and Posts APIs which include Spring Security, Junit Testing, and Swagger.
 
 ### Features of the Project
 * Users APIs:
@@ -101,10 +101,10 @@ java -jar ./target/app-1.0.0.jar
 ```
 
 ### Accessing Application
-Cpmponent         | URL                                      | Credentials
+Component         | URL                                      | Credentials
 ---               | ---                                      | ---
 MySQL Database       |  jdbc:mysql://localhost:3306/social_media        |  User Name:`root`,password:`root`   
-Swagger (API Ref) |  http://localhost:9119/swagger-ui/index.html   | 
+Swagger (API Ref) |  http://localhost:8095/swagger-ui/index.html   | 
 Swagger Spec      |  http://localhost:8095/v3/api-docs          |
 
 
