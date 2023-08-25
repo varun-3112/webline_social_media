@@ -6,9 +6,9 @@
 Component         | Technology
 ---               | ---
 Backend (REST)    | [SpringBoot](https://projects.spring.io/spring-boot) (Java)
-Security          | Token Based (Spring Security and [JWT](https://github.com/auth0/java-jwt) )
+Security          | Token Based (Spring Security and [JWT](https://github.com/auth0/java-jwt))
 REST Documentation| [Swagger UI / Springfox](https://github.com/springfox/springfox)
-REST Spec         | [Open API Standard](https://www.openapis.org/) 
+REST Spec         | [OpenAPI V3 Standard](https://www.openapis.org/) 
 Database          | MySQL
 Persistence       | JDBC driver
 Server Build Tools| Maven(Java)
@@ -58,6 +58,7 @@ This is a RESTful implementation of Users and Posts APIs, including Spring Secur
   * Login API
 
 * Above two APIs will return JWT in response, which can be used in Bearer Authorization to access other APIs. Default validity is 5 minutes, which can be changed in application.properties.
+* I have used HS256 algorithm to sign the JWT. The secret key is provided in the application.properties file.
 
 ### Build Backend (SpringBoot Java)
 ```bash
